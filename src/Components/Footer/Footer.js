@@ -1,16 +1,30 @@
 import React from 'react'
-import{Card,Button} from 'react-bootstrap'
-
+import{Card} from 'react-bootstrap'
+import { FaTwitter,FaFacebook, FaGithub } from "react-icons/fa"
+import {IconContext} from "react-icons"
 
 const Footer = () => {
       return (
       <Card style={{ position: 'fixed',bottom: '0',width: "100%"}}>
-      <Card.Body>
-      <Card.Title>Special title treatment</Card.Title>
+      <Card.Body style={{display:'block',marginRight:'auto',marginLeft:'auto'}}>
+      <Card.Title>Privacy Policy | Terms Of Service | Change Log</Card.Title>
       <Card.Text>
-            With supporting text below as a natural lead-in to additional content.
-      </Card.Text>
-      <Button variant="primary" >Go somewhere</Button>
+                        
+            </Card.Text>
+      <div style={{display:'flex',flexWrap:'wrap',flex: '1', justifyContent: 'space-around'}}>
+      <IconContext.Provider value={{ style: {fontSize: '30px', color: "rgb(0, 123, 255)"}}}>
+            <FaTwitter />
+      </IconContext.Provider> 
+
+      <IconContext.Provider value={{ style: {fontSize: '30px', color: "rgb(0, 123, 255)"}}}>  
+            < FaFacebook/>
+      </IconContext.Provider> 
+                              
+      <IconContext.Provider value={{ style: {fontSize: '30px', color: "black"}}}>
+            < FaGithub/>
+      </IconContext.Provider>
+      </div> 
+                        
       </Card.Body>
       </Card>
       )

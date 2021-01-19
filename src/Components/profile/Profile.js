@@ -1,20 +1,23 @@
 import React from 'react'
-import {Button} from 'react-bootstrap'
-const Profile = ({ data} ) => {
+import {FaInfoCircle } from "react-icons/fa"
+import {IconContext} from "react-icons"
+
+
+const Profile = ({ data }) => {
       
-      const handelName = (myname) => {
-      alert(`Hello I am ${myname}`);
+      const handelName = (fullName) => {
+      alert(`Hello I am ${fullName}`);
       };
       return (
       <>
             {
             data.map((data, i) => (
-            <div className="card mb-3 " style={{ margin: "150px 250px 200px 250px", backgroudColor: "rgba(.0,.0,.0,0.5)" }}>
+            <div className="card mb-3 " style={{ margin: "150px 250px 200px 250px" }}>
                   {console.log(data.fullName)}
 
             <div className="row no-gutters">
             <div className="col-md-4">
-                                    <img alt="" src={data.photo} style={{width:"300px",height:"313px"}}/>
+            <img alt="" src={data.photo} style={{width:"300px",height:"313px"}}/>
             </div>
             <div className="col-md-8">
             <div className="card-body">
@@ -25,7 +28,9 @@ const Profile = ({ data} ) => {
                   <p className="card-text">
                   <small className="text-muted">{data.profession}</small>
                   </p>
-                  <Button variant="primary" onClick={()=>handelName(data.fullName)}>Primary Button</Button>
+      <IconContext.Provider value={{ style: {fontSize: '30px', color: "black"}}}>
+            < FaInfoCircle onClick={() => handelName(data.fullName)}/>
+      </IconContext.Provider>
             </div>
             </div>
                   </div>
