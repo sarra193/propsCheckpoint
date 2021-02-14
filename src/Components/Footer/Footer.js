@@ -1,7 +1,7 @@
 import React from 'react'
 import{Card} from 'react-bootstrap'
 import { FaTwitter,FaFacebook, FaGithub } from "react-icons/fa"
-import {IconContext} from "react-icons"
+import { IconContext } from 'react-icons/lib'
 
 const Footer = () => {
       return (
